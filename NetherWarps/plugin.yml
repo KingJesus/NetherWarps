@@ -1,5 +1,7 @@
 name: NetherWarps
 main: me.KingJesusThe5th.Main.NetherWarps
-version: 0.0.2
+version: 0.0.3
 description: >
              Teleplorts a player randomly into the nether
+commands:
+ NetherWarps:

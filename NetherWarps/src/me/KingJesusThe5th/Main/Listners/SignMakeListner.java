@@ -15,8 +15,8 @@ public class SignMakeListner implements Listener {
 		}
 	@EventHandler
 	public void onsignplace(SignChangeEvent e){
-		if(e.getLine(0).equals("["+ChatColor.BLUE+"Warp"+ChatColor.BLACK+"]")&&e.getLine(2).equals("Wilderness")&&e.getLine(3).equals("Nether")
-		 ||e.getLine(0).equals("[Warp]")&&e.getLine(1).equals("Wilderness")&&e.getLine(2).equals("Nether")){
+		if(e.getLine(0).equalsIgnoreCase("["+ChatColor.BLUE+"Warp"+ChatColor.BLACK+"]")&&e.getLine(2).equalsIgnoreCase("Wilderness")&&e.getLine(3).equalsIgnoreCase("Nether")
+		 ||e.getLine(0).equalsIgnoreCase("[Warp]")&&e.getLine(1).equalsIgnoreCase("Wilderness")&&e.getLine(2).equalsIgnoreCase("Nether")){
 			if(e.getPlayer().hasPermission("NetherWarps.sign.place")){
 			e.setLine(0, "["+ChatColor.BLUE+"Warp"+ChatColor.BLACK+"]");
 			e.getPlayer().sendMessage("Sign successfully made");

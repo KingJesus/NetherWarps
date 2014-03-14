@@ -2,8 +2,11 @@ package me.KingJesusThe5th.Main;
 
 import java.util.logging.Logger;
 
+import me.KingJesusThe5th.Main.Commands.HelpCommand;
 import me.KingJesusThe5th.Main.Listners.PlayerListener;
 import me.KingJesusThe5th.Main.Listners.SignMakeListner;
+
+
 
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,9 +17,12 @@ public class NetherWarps extends JavaPlugin implements Listener{
 	public final PlayerListener PListner = new PlayerListener(this);
 	public final SignMakeListner SListner = new SignMakeListner(this);
 	public void onEnable(){
+		getCommand("NetherWarps").setExecutor(new HelpCommand(this));
 		getServer().getPluginManager().registerEvents(this, this);
 		getServer().getPluginManager().registerEvents(this.PListner, this);
 		getServer().getPluginManager().registerEvents(this.SListner, this);
+		getConfig().options().copyDefaults(true);
+		saveConfig();
 	}
 	@Override
 	public void onDisable() {
