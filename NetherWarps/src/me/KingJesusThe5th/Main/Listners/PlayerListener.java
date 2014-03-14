@@ -63,7 +63,7 @@ public class PlayerListener implements Listener {
 						//No open area for that player to teleport to, Finding a new location
 					}
 				}
-				e.getPlayer().teleport(L.add(0.5, 1.5, 0.5));
+				e.getPlayer().teleport(L.add(0.5, 0.5, 0.5));
 				}else{
 					e.getPlayer().sendMessage("This sign only works in the nether!");
 				}
